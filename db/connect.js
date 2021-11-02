@@ -1,2 +1,12 @@
-const connectionString =
-  "mongodb+srv://yana:<Yana0543038283>@nodeexpressproject.2uszb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoose = require("mongoose");
+
+const connectDB = (url) => {
+  return mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  });
+};
+
+module.exports = connectDB;
